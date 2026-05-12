@@ -266,6 +266,9 @@ const PAINS = [
   { icon: <IconStar />, title: "Concurența arată mai bine", desc: "Dacă ei au un site frumos și tu nu, banii merg la ei. Simplu.", stat: "2 din 3", statLabel: "clienți aleg afacerea care arată mai profesional" },
   { icon: <IconTrend />, title: "Identitate vizuală slabă", desc: "Fără brand coerent, nu poți cere prețuri mari. Arată amateurism.", stat: "33%", statLabel: "prețuri mai mici percepute fără brand clar" },
   { icon: <IconZap />, title: "Fără prezență socială", desc: "Fără video content, algoritmii nu te ajută. Ești de găsit doar de cei care te știu deja.", stat: "6×", statLabel: "mai mult reach organic cu video vs text" },
+  { icon: <IconStar />, title: "Fără Google Reviews", desc: "Recenziile influențează 93% din decizii. Fără prezență digitală, pierzi înainte să înceapă.", stat: "93%", statLabel: "din decizii influențate de recenzii online" },
+  { icon: <IconTrend />, title: "Zero lead-uri noi", desc: "Un site optimizat lucrează 24/7 pentru tine. Fără el, clienții nu te găsesc niciodată.", stat: "24/7", statLabel: "un site bun generează lead-uri non-stop" },
+  { icon: <IconGlobe />, title: "Costă mai mult să recuperezi", desc: "Cu cât aștepți, cu atât concurența se instalează mai solid. Momentul optim e acum.", stat: "2×", statLabel: "mai greu să recâștigi piața după ce ai pierdut-o" },
 ];
 
 // ── Steps ──────────────────────────────────────────────────────────────────────
@@ -374,122 +377,6 @@ export default function LandingPage() {
           </div>
         </div>
 
-        {/* SERVICE CARDS */}
-        <section id="servicii" className="w-full max-w-6xl px-4 sm:px-6 py-16 sm:py-24">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-            className="mb-10 sm:mb-14"
-          >
-            <div className="text-accent font-mono text-xs tracking-widest mb-4">SERVICII</div>
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold leading-tight max-w-xl">
-              Două servicii.
-              <br />
-              <span className="gradient-studio-2">Un singur brand.</span>
-            </h2>
-          </motion.div>
-
-          <div className="grid sm:grid-cols-2 gap-6">
-            {/* Website card */}
-            <motion.div
-              initial={{ opacity: 0, y: 24 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5 }}
-              className="relative rounded-2xl overflow-hidden"
-              style={{ background: "#0a0f2a", border: "1px solid rgba(79,142,255,0.2)", padding: "32px" }}
-            >
-              <div style={{ position: "absolute", top: 0, right: 0, width: "60%", height: "60%", background: "radial-gradient(circle, rgba(79,142,255,0.08), transparent 70%)", pointerEvents: "none" }} />
-              <div className="relative">
-                <div
-                  className="w-12 h-12 rounded-xl flex items-center justify-center text-accent mb-5"
-                  style={{ background: "rgba(79,142,255,0.1)", border: "1px solid rgba(79,142,255,0.25)" }}
-                >
-                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-                    <rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/>
-                  </svg>
-                </div>
-                <a
-                  href="OFFER_PAGE_URL"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-1.5 text-xs font-semibold mb-5 px-3 py-1.5 rounded-lg transition"
-                  style={{ background: "rgba(79,142,255,0.1)", border: "1px solid rgba(79,142,255,0.3)", color: "#4f8eff" }}
-                >
-                  Oferta noastră →
-                </a>
-                <h3 className="text-2xl font-bold mb-3">Website Design</h3>
-                <p className="text-foreground-muted text-sm leading-relaxed mb-6">
-                  Un site care lucrează pentru tine — design custom, vizibil pe Google, cu sisteme integrate. Plată unică, fără abonament. Pachete de la <span className="text-foreground font-medium">€150 la €250</span>.
-                </p>
-                <ul className="space-y-2 text-sm text-foreground-muted mb-8">
-                  {["Design 100% personalizat", "5–7 pagini complete", "Animații & efecte vizuale", "SEO + indexare Google", "Sisteme integrate (rezervări, programări)", "Livrare în 48–72 ore"].map((f) => (
-                    <li key={f} className="flex items-center gap-2">
-                      <span className="text-accent text-xs">✓</span>
-                      {f}
-                    </li>
-                  ))}
-                </ul>
-                <Link href="/concept/start?service=website" className="btn-primary text-sm inline-flex group">
-                  Concept gratuit de site →
-                </Link>
-              </div>
-            </motion.div>
-
-            {/* Motion card */}
-            <motion.div
-              initial={{ opacity: 0, y: 24 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: 0.1 }}
-              className="relative rounded-2xl overflow-hidden"
-              style={{ background: "#0a0f2a", border: "1px solid rgba(139,92,246,0.2)", padding: "32px" }}
-            >
-              <div style={{ position: "absolute", top: 0, right: 0, width: "60%", height: "60%", background: "radial-gradient(circle, rgba(139,92,246,0.08), transparent 70%)", pointerEvents: "none" }} />
-              <div className="relative">
-                <div
-                  className="w-12 h-12 rounded-xl flex items-center justify-center mb-5"
-                  style={{ background: "rgba(139,92,246,0.1)", border: "1px solid rgba(139,92,246,0.25)", color: "#8b5cf6" }}
-                >
-                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-                    <polygon points="5 3 19 12 5 21 5 3"/>
-                  </svg>
-                </div>
-                <a
-                  href="OFFER_PAGE_URL"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-1.5 text-xs font-semibold mb-5 px-3 py-1.5 rounded-lg transition"
-                  style={{ background: "rgba(139,92,246,0.1)", border: "1px solid rgba(139,92,246,0.3)", color: "#8b5cf6" }}
-                >
-                  Oferta noastră →
-                </a>
-                <h3 className="text-2xl font-bold mb-3">Motion Video</h3>
-                <p className="text-foreground-muted text-sm leading-relaxed mb-6">
-                  Motion grafică cinematică — creat complet de la zero sau montat pe footage-ul tău. Voiceover profesional, sound design, gata pentru ads, social media sau prezentări.
-                </p>
-                <ul className="space-y-2 text-sm text-foreground-muted mb-8">
-                  {["Motion graphics animate", "De la zero sau pe footage-ul tău", "Voiceover profesional", "Sound design (SFX)", "Formate pentru orice platformă", "Storyboard & concept inclus"].map((f) => (
-                    <li key={f} className="flex items-center gap-2">
-                      <span style={{ color: "#8b5cf6" }} className="text-xs">✓</span>
-                      {f}
-                    </li>
-                  ))}
-                </ul>
-                <Link
-                  href="/concept/start?service=motion"
-                  className="btn-primary text-sm inline-flex group"
-                  style={{ background: "#8b5cf6" }}
-                >
-                  Concept motion gratuit →
-                </Link>
-              </div>
-            </motion.div>
-          </div>
-        </section>
-
         {/* PAIN SECTION */}
         <section id="de-ce-conteaza" className="w-full py-16 sm:py-24">
           <motion.div
@@ -514,9 +401,9 @@ export default function LandingPage() {
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
-                  transition={{ duration: 0.4, delay: i * 0.07 }}
+                  transition={{ duration: 0.4, delay: Math.min(i, 5) * 0.07 }}
                   className="card pain-card hover:border-border-strong transition-all duration-300"
-                  style={i >= 3 ? { opacity: 0.25, filter: "blur(2px)", pointerEvents: "none", userSelect: "none" } : undefined}
+                  style={i >= 6 ? { opacity: 0.2, filter: "blur(3px)", pointerEvents: "none", userSelect: "none" } : undefined}
                 >
                   <div className="w-7 h-7 sm:w-9 sm:h-9 rounded-xl flex items-center justify-center text-accent mb-3 sm:mb-4" style={{ background: "rgba(79,142,255,0.1)", border: "1px solid rgba(79,142,255,0.2)" }}>
                     {pain.icon}
@@ -529,6 +416,7 @@ export default function LandingPage() {
                 </motion.div>
               ))}
             </div>
+            <div style={{ position: "absolute", bottom: 0, left: 0, right: 0, height: 200, background: "linear-gradient(to top, #050818 25%, rgba(5,8,24,0.75) 60%, transparent 100%)", pointerEvents: "none" }} />
           </div>
 
           <motion.div
@@ -596,6 +484,122 @@ export default function LandingPage() {
                 <p className="text-foreground-muted text-sm sm:text-base leading-relaxed">{step.desc}</p>
               </motion.div>
             ))}
+          </div>
+        </section>
+
+        {/* SERVICE CARDS */}
+        <section id="servicii" className="w-full max-w-6xl px-4 sm:px-6 py-16 sm:py-24">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="mb-10 sm:mb-14"
+          >
+            <div className="text-accent font-mono text-xs tracking-widest mb-4">SERVICII</div>
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold leading-tight max-w-xl">
+              Două servicii.
+              <br />
+              <span className="gradient-studio-2">Un singur brand.</span>
+            </h2>
+          </motion.div>
+
+          <div className="grid sm:grid-cols-2 gap-6">
+            {/* Website card */}
+            <motion.div
+              initial={{ opacity: 0, y: 24 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5 }}
+              className="relative rounded-2xl overflow-hidden"
+              style={{ background: "#0a0f2a", border: "1px solid rgba(79,142,255,0.2)", padding: "32px" }}
+            >
+              <div style={{ position: "absolute", top: 0, right: 0, width: "60%", height: "60%", background: "radial-gradient(circle, rgba(79,142,255,0.08), transparent 70%)", pointerEvents: "none" }} />
+              <div className="relative">
+                <div
+                  className="w-12 h-12 rounded-xl flex items-center justify-center text-accent mb-5"
+                  style={{ background: "rgba(79,142,255,0.1)", border: "1px solid rgba(79,142,255,0.25)" }}
+                >
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+                    <rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/>
+                  </svg>
+                </div>
+                <a
+                  href="https://oferta-tan.vercel.app/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-1.5 text-xs font-semibold mb-5 px-3 py-1.5 rounded-lg transition"
+                  style={{ background: "rgba(79,142,255,0.1)", border: "1px solid rgba(79,142,255,0.3)", color: "#4f8eff" }}
+                >
+                  Oferta noastră →
+                </a>
+                <h3 className="text-2xl font-bold mb-3">Website Design</h3>
+                <p className="text-foreground-muted text-sm leading-relaxed mb-6">
+                  Un site care lucrează pentru tine — design custom, vizibil pe Google, cu sisteme integrate. Plată unică, fără abonament. Pachete de la <span className="text-foreground font-medium">€150 la €250</span>.
+                </p>
+                <ul className="space-y-2 text-sm text-foreground-muted mb-8">
+                  {["Design 100% personalizat", "5–7 pagini complete", "Animații & efecte vizuale", "SEO + indexare Google", "Sisteme integrate (rezervări, programări)", "Livrare în 48–72 ore"].map((f) => (
+                    <li key={f} className="flex items-center gap-2">
+                      <span className="text-accent text-xs">✓</span>
+                      {f}
+                    </li>
+                  ))}
+                </ul>
+                <Link href="/concept/start?service=website" className="btn-primary text-sm inline-flex group">
+                  Concept gratuit de site →
+                </Link>
+              </div>
+            </motion.div>
+
+            {/* Motion card */}
+            <motion.div
+              initial={{ opacity: 0, y: 24 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: 0.1 }}
+              className="relative rounded-2xl overflow-hidden"
+              style={{ background: "#0a0f2a", border: "1px solid rgba(139,92,246,0.2)", padding: "32px" }}
+            >
+              <div style={{ position: "absolute", top: 0, right: 0, width: "60%", height: "60%", background: "radial-gradient(circle, rgba(139,92,246,0.08), transparent 70%)", pointerEvents: "none" }} />
+              <div className="relative">
+                <div
+                  className="w-12 h-12 rounded-xl flex items-center justify-center mb-5"
+                  style={{ background: "rgba(139,92,246,0.1)", border: "1px solid rgba(139,92,246,0.25)", color: "#8b5cf6" }}
+                >
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+                    <polygon points="5 3 19 12 5 21 5 3"/>
+                  </svg>
+                </div>
+                <a
+                  href="https://oferta-tan.vercel.app/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-1.5 text-xs font-semibold mb-5 px-3 py-1.5 rounded-lg transition"
+                  style={{ background: "rgba(139,92,246,0.1)", border: "1px solid rgba(139,92,246,0.3)", color: "#8b5cf6" }}
+                >
+                  Oferta noastră →
+                </a>
+                <h3 className="text-2xl font-bold mb-3">Motion Video</h3>
+                <p className="text-foreground-muted text-sm leading-relaxed mb-6">
+                  Motion grafică cinematică — creat complet de la zero sau montat pe footage-ul tău. Voiceover profesional, sound design, gata pentru ads, social media sau prezentări.
+                </p>
+                <ul className="space-y-2 text-sm text-foreground-muted mb-8">
+                  {["Motion graphics animate", "De la zero sau pe footage-ul tău", "Voiceover profesional", "Sound design (SFX)", "Formate pentru orice platformă", "Storyboard & concept inclus"].map((f) => (
+                    <li key={f} className="flex items-center gap-2">
+                      <span style={{ color: "#8b5cf6" }} className="text-xs">✓</span>
+                      {f}
+                    </li>
+                  ))}
+                </ul>
+                <Link
+                  href="/concept/start?service=motion"
+                  className="btn-primary text-sm inline-flex group"
+                  style={{ background: "#8b5cf6" }}
+                >
+                  Concept motion gratuit →
+                </Link>
+              </div>
+            </motion.div>
           </div>
         </section>
 
