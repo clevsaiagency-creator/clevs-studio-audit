@@ -47,12 +47,12 @@ function PulsingStep({ num, stepIndex, color = "rgba(79,142,255," }: { num: stri
 // ── Live Ticker ────────────────────────────────────────────────────────────────
 
 const TICKER = [
-  { what: "Website concept", biz: "Salon Éclat Beauty", city: "Cluj", time: "3 min" },
-  { what: "Motion video", biz: "GreenArch Studio", city: "București", time: "11 min" },
-  { what: "Website concept", biz: "Cabinet Dr. Mihai", city: "Timișoara", time: "22 min" },
-  { what: "Motion video", biz: "FitLife Gym", city: "Iași", time: "34 min" },
-  { what: "Website concept", biz: "La Dolce Vita Café", city: "Brașov", time: "48 min" },
-  { what: "Motion video", biz: "Nova Agency", city: "Sibiu", time: "1h 02 min" },
+  { what: "Website concept", biz: "Salon beauty", city: "Cluj", time: "3 min" },
+  { what: "Motion video", biz: "Studio arhitectură", city: "București", time: "11 min" },
+  { what: "Website concept", biz: "Cabinet stomatologic", city: "Timișoara", time: "22 min" },
+  { what: "Motion video", biz: "Sală fitness", city: "Iași", time: "34 min" },
+  { what: "Website concept", biz: "Cafenea", city: "Brașov", time: "48 min" },
+  { what: "Motion video", biz: "Agenție imobiliară", city: "Sibiu", time: "1h 02 min" },
 ];
 
 function LiveTicker() {
@@ -130,7 +130,7 @@ function StudioConceptCard() {
           {/* Label */}
           <div style={{ fontSize: 10, color: "#6c7299", fontFamily: "monospace", marginBottom: 6, letterSpacing: "0.08em" }}>PENTRU</div>
           <div style={{ fontSize: 15, fontWeight: 600, color: "#f5f7ff", marginBottom: 16 }}>
-            {tab === "website" ? "Cristina Beauty Studio" : "FitLife Gym"}
+            {tab === "website" ? "Beauty Salon" : "Sport Gym"}
           </div>
 
           {tab === "website" ? (
@@ -387,8 +387,8 @@ export default function LandingPage() {
           >
             <div className="text-accent font-mono text-xs tracking-widest mb-4">DE CE CONTEAZĂ</div>
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold leading-tight max-w-2xl">
-              Ce te costă să nu
-              <br />arăți bine.
+              Cât te costă să nu
+              <br />faci asta?
             </h2>
           </motion.div>
 
