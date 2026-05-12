@@ -22,7 +22,7 @@ const STILURI = [
   { label: "Nu știu, decideți voi", desc: "Facem noi recomandarea potrivită" },
 ];
 
-const BUGETE = ["€150 — Basic", "€200 — Standard", "€250 — Premium", "€300+ — Personalizat"];
+const BUGETE = ["€150 — Basic", "€200 — Standard", "€250 — Premium", "€300+ — Complexitate ridicată"];
 
 function StepTitle({ children }: { children: React.ReactNode }) {
   return (
@@ -129,16 +129,15 @@ export default function WebsiteSteps({ state, dispatch }: Props) {
         </div>
       )}
 
-      {/* ── Step 3: Scopuri (multi-select) ── */}
+      {/* ── Step 3: Scop principal (single-select) ── */}
       {state.step === 3 && (
         <div>
-          <StepTitle>Ce vrei să facă site-ul?</StepTitle>
-          <StepSubtitle>Poți selecta mai multe variante.</StepSubtitle>
+          <StepTitle>Scopul principal al site-ului</StepTitle>
+          <StepSubtitle>Alege varianta care se potrivește cel mai bine.</StepSubtitle>
           <OptionGroup
             options={SCOPURI}
-            value={state.scopuri}
-            onChange={(v) => dispatch({ type: "toggleMulti", field: "scopuri", value: v })}
-            multiSelect
+            value={state.scopuri[0] || ""}
+            onChange={(v) => dispatch({ type: "set", field: "scopuri", value: [v] })}
           />
         </div>
       )}
@@ -167,7 +166,7 @@ export default function WebsiteSteps({ state, dispatch }: Props) {
             onChange={(v) => dispatch({ type: "set", field: "buget", value: v })}
           />
           <p className="text-xs text-foreground-dim mt-4">
-            Domeniu propriu: €10–25/an, plătit separat de tine. Alex configurează totul gratuit.
+            Domeniu propriu: €10–25/an, plătit separat de tine. Noi configurăm totul gratuit.
           </p>
         </div>
       )}
