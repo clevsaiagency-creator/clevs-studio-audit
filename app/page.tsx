@@ -290,15 +290,14 @@ export default function LandingPage() {
 
         {/* HEADER */}
         <header className="w-full max-w-6xl px-4 sm:px-6 py-4 sm:py-6 flex items-center justify-between">
-          <Link href="/" className="flex items-center gap-3">
+          <Link href="/" className="flex items-center">
             <Image
               src="/clevs-studio-logo.png"
               alt="Clevs Studio"
-              width={32}
-              height={32}
+              width={140}
+              height={40}
               style={{ objectFit: "contain", mixBlendMode: "lighten" }}
             />
-            <span className="font-bold text-lg tracking-tight">Clevs Studio</span>
           </Link>
           <nav className="hidden sm:flex items-center gap-7 text-sm">
             <a href="#servicii" className="text-foreground-muted hover:text-foreground transition">Servicii</a>
@@ -643,8 +642,8 @@ export default function LandingPage() {
         <footer className="w-full" style={{ borderTop: "1px solid rgba(255,255,255,0.06)" }}>
           <div className="max-w-6xl mx-auto px-4 sm:px-6 py-6 sm:py-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-sm text-foreground-dim">
             <div className="flex items-center gap-2">
-              <Image src="/clevs-studio-logo.png" alt="Clevs Studio" width={22} height={22} style={{ objectFit: "contain", mixBlendMode: "lighten" }} />
-              <span>© {new Date().getFullYear()} Clevs Studio</span>
+              <Image src="/clevs-studio-logo.png" alt="Clevs Studio" width={90} height={26} style={{ objectFit: "contain", mixBlendMode: "lighten" }} />
+              <span>© {new Date().getFullYear()}</span>
             </div>
             <div className="flex flex-col sm:flex-row items-center gap-3 sm:gap-6">
               <a href="mailto:clevs.contact@gmail.com" className="hover:text-foreground transition">clevs.contact@gmail.com</a>

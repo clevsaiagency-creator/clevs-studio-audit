@@ -33,9 +33,8 @@ export default function MultumirePage() {
 
       <main className="relative z-10 min-h-screen flex flex-col items-center">
         <header className="w-full max-w-6xl px-6 py-5 flex items-center justify-between">
-          <Link href="/" className="flex items-center gap-2.5 text-foreground">
-            <Image src="/clevs-studio-logo.png" alt="Clevs Studio" width={28} height={28} style={{ objectFit: "contain", mixBlendMode: "lighten" }} />
-            <span className="font-bold text-base">Clevs Studio</span>
+          <Link href="/" className="flex items-center">
+            <Image src="/clevs-studio-logo.png" alt="Clevs Studio" width={120} height={34} style={{ objectFit: "contain", mixBlendMode: "lighten" }} />
           </Link>
         </header>
 
