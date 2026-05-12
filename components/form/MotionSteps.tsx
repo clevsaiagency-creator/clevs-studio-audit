@@ -25,8 +25,8 @@ const VIBE_OPTIONS = [
 
 const FOOTAGE_OPTIONS = [
   { label: "Da, am footage", desc: "Trimit clip-uri, fotografii sau link drive" },
-  { label: "Nu, filmi tu", desc: "Nu am nimic, organizăm filmarea" },
-  { label: "Nu știu încă", desc: "Vorbim când ajung la voi" },
+  { label: "Nu, construiți voi", desc: "Creați de la zero, fără materiale de la mine" },
+  { label: "Nu știu încă", desc: "Vorbim când ajungem la asta" },
 ];
 
 function StepTitle({ children }: { children: React.ReactNode }) {
@@ -108,16 +108,15 @@ export default function MotionSteps({ state, dispatch }: Props) {
         </div>
       )}
 
-      {/* ── Step 2: Scop video (multi-select) ── */}
+      {/* ── Step 2: Scop video (single-select) ── */}
       {state.step === 2 && (
         <div>
-          <StepTitle>Pentru ce e video-ul?</StepTitle>
-          <StepSubtitle>Poți selecta mai multe variante.</StepSubtitle>
+          <StepTitle>Scopul principal al video-ului</StepTitle>
+          <StepSubtitle>Alege varianta care se potrivește cel mai bine.</StepSubtitle>
           <OptionGroup
             options={SCOPURI_VIDEO}
-            value={state.scopVideo}
-            onChange={(v) => dispatch({ type: "toggleMulti", field: "scopVideo", value: v })}
-            multiSelect
+            value={state.scopVideo[0] || ""}
+            onChange={(v) => dispatch({ type: "set", field: "scopVideo", value: [v] })}
           />
           {hasAltceva && (
             <motion.div initial={{ opacity: 0, y: 8 }} animate={{ opacity: 1, y: 0 }} className="mt-4">
@@ -143,26 +142,28 @@ export default function MotionSteps({ state, dispatch }: Props) {
             options={FOOTAGE_OPTIONS}
             value={
               state.footageExistent === "da" ? "Da, am footage" :
-              state.footageExistent === "nu" ? "Nu, filmi tu" :
+              state.footageExistent === "nu" ? "Nu, construiți voi" :
               state.footageExistent === "nu_stiu" ? "Nu știu încă" : ""
             }
             onChange={(v) => {
               const map: Record<string, "da" | "nu" | "nu_stiu"> = {
                 "Da, am footage": "da",
-                "Nu, filmi tu": "nu",
+                "Nu, construiți voi": "nu",
                 "Nu știu încă": "nu_stiu",
               };
               dispatch({ type: "set", field: "footageExistent", value: map[v] });
+              dispatch({ type: "set", field: "footageLink", value: "" });
             }}
           />
           {state.footageExistent === "da" && (
             <motion.div initial={{ opacity: 0, y: 8 }} animate={{ opacity: 1, y: 0 }} className="mt-4">
               <input
-                type="url"
+                type="text"
                 value={state.footageLink}
                 onChange={(e) => dispatch({ type: "set", field: "footageLink", value: e.target.value })}
-                placeholder="Link Drive / WeTransfer / site (opțional)"
+                placeholder="Link Drive / WeTransfer / site *"
                 className="input-base"
+                autoFocus
               />
             </motion.div>
           )}

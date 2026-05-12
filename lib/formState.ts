@@ -105,13 +105,17 @@ export function isStepValid(state: FormState): boolean {
       return state.scopVideo.length > 0;
     case 3:
       if (serviceType === "website") return state.scopuri.length > 0;
-      return state.footageExistent !== "";
+      if (state.footageExistent === "") return false;
+      if (state.footageExistent === "da") return state.footageLink.trim().length > 0;
+      return true;
     case 4:
       if (serviceType === "website") return state.stilWebsite !== "";
       return state.vibe !== "";
     case 5:
       if (serviceType === "website") return state.buget !== "";
-      return state.areCulori !== "";
+      if (state.areCulori === "") return false;
+      if (state.areCulori === "da") return state.culoriText.trim().length > 0;
+      return true;
     case 6:
       return (
         state.numeAfacere.trim().length > 1 &&

@@ -156,15 +156,6 @@ body {
   padding: 24px;
 }
 
-/* Pain grid */
-.pain-grid { max-height: 350px; overflow: hidden; }
-@media (min-width: 640px) { .pain-grid { max-height: 480px; } }
-@media (min-width: 1024px) { .pain-grid { max-height: 400px; } }
-
-.pain-fade { height: 100px; }
-@media (min-width: 640px) { .pain-fade { height: 160px; } }
-@media (min-width: 1024px) { .pain-fade { height: 180px; } }
-
 .pain-card { padding: 14px; }
 @media (min-width: 640px) { .pain-card { padding: 24px; } }
 

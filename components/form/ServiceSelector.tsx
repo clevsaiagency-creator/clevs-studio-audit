@@ -7,7 +7,7 @@ interface ServiceSelectorProps {
   dispatch: React.Dispatch<FormAction>;
 }
 
-const SERVICES: { type: ServiceType; icon: React.ReactNode; title: string; tagline: string; what: string; badge: string }[] = [
+const SERVICES: { type: ServiceType; icon: React.ReactNode; title: string; tagline: string; what: string }[] = [
   {
     type: "website",
     icon: (
@@ -20,7 +20,6 @@ const SERVICES: { type: ServiceType; icon: React.ReactNode; title: string; tagli
     title: "Website Concept",
     tagline: "Primești o previzualizare gratuită a site-ului tău",
     what: "Design + structură + paleta de culori, gata de analizat",
-    badge: "€150–250",
   },
   {
     type: "motion",
@@ -32,7 +31,6 @@ const SERVICES: { type: ServiceType; icon: React.ReactNode; title: string; tagli
     title: "Motion Video",
     tagline: "Primești un concept animat de 10 secunde, complet gratuit",
     what: "Motion graphics + voiceover + SFX pe footage-ul tău",
-    badge: "€29 / minut",
   },
 ];
 
@@ -75,13 +73,6 @@ export default function ServiceSelector({ dispatch }: ServiceSelectorProps) {
               style={{ background: "rgba(79,142,255,0.1)", border: "1px solid rgba(79,142,255,0.25)" }}
             >
               {s.icon}
-            </div>
-
-            <div
-              className="inline-block text-xs font-mono px-2.5 py-1 rounded-full mb-4"
-              style={{ background: "rgba(79,142,255,0.12)", border: "1px solid rgba(79,142,255,0.25)", color: "#4f8eff" }}
-            >
-              {s.badge}
             </div>
 
             <h3 className="text-xl font-bold mb-2">{s.title}</h3>

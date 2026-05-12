@@ -215,12 +215,10 @@ function MobileConceptPreview() {
           <div style={{ background: "rgba(79,142,255,0.08)", borderRadius: 10, padding: "12px", border: "1px solid rgba(79,142,255,0.2)" }}>
             <div style={{ fontSize: 10, color: "#4f8eff", fontFamily: "monospace", marginBottom: 6 }}>WEBSITE</div>
             <div style={{ fontSize: 12, fontWeight: 600, color: "#f5f7ff" }}>Design + Deploy</div>
-            <div style={{ fontSize: 11, color: "#6c7299", marginTop: 2 }}>€150–250</div>
           </div>
           <div style={{ background: "rgba(139,92,246,0.08)", borderRadius: 10, padding: "12px", border: "1px solid rgba(139,92,246,0.2)" }}>
             <div style={{ fontSize: 10, color: "#8b5cf6", fontFamily: "monospace", marginBottom: 6 }}>MOTION</div>
             <div style={{ fontSize: 12, fontWeight: 600, color: "#f5f7ff" }}>Video animat</div>
-            <div style={{ fontSize: 11, color: "#6c7299", marginTop: 2 }}>€29/minut</div>
           </div>
         </div>
         <div style={{ background: "rgba(255,255,255,0.04)", borderRadius: 10, padding: "12px 14px", position: "relative", overflow: "hidden" }}>
@@ -413,22 +411,28 @@ export default function LandingPage() {
                     <rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/>
                   </svg>
                 </div>
-                <div className="text-xs font-mono px-2.5 py-1 rounded-full inline-block mb-4" style={{ background: "rgba(79,142,255,0.12)", border: "1px solid rgba(79,142,255,0.25)", color: "#4f8eff" }}>
-                  €150 — €250
-                </div>
+                <a
+                  href="OFFER_PAGE_URL"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-1.5 text-xs font-semibold mb-5 px-3 py-1.5 rounded-lg transition"
+                  style={{ background: "rgba(79,142,255,0.1)", border: "1px solid rgba(79,142,255,0.3)", color: "#4f8eff" }}
+                >
+                  Oferta noastră →
+                </a>
                 <h3 className="text-2xl font-bold mb-3">Website Design</h3>
                 <p className="text-foreground-muted text-sm leading-relaxed mb-6">
-                  Site profesional pentru afacerea ta locală. Mobile-friendly, rapid, deploiat pe domeniul tău. 3 zile livrare.
+                  Un site care lucrează pentru tine — design custom, vizibil pe Google, cu sisteme integrate. Plată unică, fără abonament. Pachete de la <span className="text-foreground font-medium">€150 la €250</span>.
                 </p>
                 <ul className="space-y-2 text-sm text-foreground-muted mb-8">
-                  {["Design personalizat", "Mobile-first", "SEO de bază", "Buton WhatsApp/telefon", "Deploy + configurare domeniu", "1 rundă de revizii inclusă"].map((f) => (
+                  {["Design 100% personalizat", "5–7 pagini complete", "Animații & efecte vizuale", "SEO + indexare Google", "Sisteme integrate (rezervări, programări)", "Livrare în 48–72 ore"].map((f) => (
                     <li key={f} className="flex items-center gap-2">
                       <span className="text-accent text-xs">✓</span>
                       {f}
                     </li>
                   ))}
                 </ul>
-                <Link href="/concept/start" className="btn-primary text-sm inline-flex group">
+                <Link href="/concept/start?service=website" className="btn-primary text-sm inline-flex group">
                   Concept gratuit de site →
                 </Link>
               </div>
@@ -453,15 +457,21 @@ export default function LandingPage() {
                     <polygon points="5 3 19 12 5 21 5 3"/>
                   </svg>
                 </div>
-                <div className="text-xs font-mono px-2.5 py-1 rounded-full inline-block mb-4" style={{ background: "rgba(139,92,246,0.12)", border: "1px solid rgba(139,92,246,0.25)", color: "#8b5cf6" }}>
-                  €29 / minut · 2 zile livrare
-                </div>
+                <a
+                  href="OFFER_PAGE_URL"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-1.5 text-xs font-semibold mb-5 px-3 py-1.5 rounded-lg transition"
+                  style={{ background: "rgba(139,92,246,0.1)", border: "1px solid rgba(139,92,246,0.3)", color: "#8b5cf6" }}
+                >
+                  Oferta noastră →
+                </a>
                 <h3 className="text-2xl font-bold mb-3">Motion Video</h3>
                 <p className="text-foreground-muted text-sm leading-relaxed mb-6">
-                  Motion graphics animate peste footage-ul tău. Voiceover, SFX și efecte cinematice — gata pentru ads și social media.
+                  Motion grafică cinematică — creat complet de la zero sau montat pe footage-ul tău. Voiceover profesional, sound design, gata pentru ads, social media sau prezentări.
                 </p>
                 <ul className="space-y-2 text-sm text-foreground-muted mb-8">
-                  {["Motion graphics animate", "Voiceover profesional", "Sound effects (SFX)", "Overlay pe footage-ul tău", "Format pentru toate platformele", "10 sec concept GRATUIT"].map((f) => (
+                  {["Motion graphics animate", "De la zero sau pe footage-ul tău", "Voiceover profesional", "Sound design (SFX)", "Formate pentru orice platformă", "Storyboard & concept inclus"].map((f) => (
                     <li key={f} className="flex items-center gap-2">
                       <span style={{ color: "#8b5cf6" }} className="text-xs">✓</span>
                       {f}
@@ -469,7 +479,7 @@ export default function LandingPage() {
                   ))}
                 </ul>
                 <Link
-                  href="/concept/start"
+                  href="/concept/start?service=motion"
                   className="btn-primary text-sm inline-flex group"
                   style={{ background: "#8b5cf6" }}
                 >
@@ -497,7 +507,7 @@ export default function LandingPage() {
           </motion.div>
 
           <div className="relative max-w-6xl mx-auto px-4 sm:px-6">
-            <div className="grid grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4 pain-grid">
+            <div className="grid grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4">
               {PAINS.map((pain, i) => (
                 <motion.div
                   key={i}
@@ -506,6 +516,7 @@ export default function LandingPage() {
                   viewport={{ once: true }}
                   transition={{ duration: 0.4, delay: i * 0.07 }}
                   className="card pain-card hover:border-border-strong transition-all duration-300"
+                  style={i >= 3 ? { opacity: 0.25, filter: "blur(2px)", pointerEvents: "none", userSelect: "none" } : undefined}
                 >
                   <div className="w-7 h-7 sm:w-9 sm:h-9 rounded-xl flex items-center justify-center text-accent mb-3 sm:mb-4" style={{ background: "rgba(79,142,255,0.1)", border: "1px solid rgba(79,142,255,0.2)" }}>
                     {pain.icon}
@@ -518,7 +529,6 @@ export default function LandingPage() {
                 </motion.div>
               ))}
             </div>
-            <div className="pain-fade absolute bottom-0 left-0 right-0 pointer-events-none" style={{ background: "linear-gradient(to top, #050818 30%, rgba(5,8,24,0.7) 65%, transparent 100%)" }} />
           </div>
 
           <motion.div

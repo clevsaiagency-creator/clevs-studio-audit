@@ -1,6 +1,6 @@
 "use client";
 
-import { useReducer, useState } from "react";
+import { useEffect, useReducer, useState } from "react";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
 import Image from "next/image";
@@ -15,6 +15,14 @@ import { formReducer, INITIAL_STATE, isStepValid } from "@/lib/formState";
 export default function ConceptStartPage() {
   const router = useRouter();
   const [state, dispatch] = useReducer(formReducer, INITIAL_STATE);
+
+  useEffect(() => {
+    const params = new URLSearchParams(window.location.search);
+    const service = params.get("service");
+    if (service === "website" || service === "motion") {
+      dispatch({ type: "selectService", service });
+    }
+  }, []);
   const [submitting, setSubmitting] = useState(false);
   const [error, setError] = useState<string | null>(null);
 
