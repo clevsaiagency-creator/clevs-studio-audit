@@ -81,5 +81,42 @@ export async function POST(request: NextRequest) {
     return NextResponse.json({ error: "Eroare server. Încearcă din nou." }, { status: 500 });
   }
 
+  // Make webhook (fire-and-forget — leadul e deja salvat în Supabase)
+  const makeUrl = process.env.MAKE_WEBHOOK_URL;
+  if (makeUrl) {
+    try {
+      const webhookRes = await fetch(makeUrl, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          service_type: data.serviceType,
+          domeniu: data.domeniu,
+          nume_afacere: data.numeAfacere,
+          nume: data.nume,
+          email: data.email || null,
+          whatsapp: data.whatsapp || null,
+          // Website
+          are_website: data.serviceType === "website" ? data.areWebsite : null,
+          website_link: data.serviceType === "website" ? (data.websiteLink || null) : null,
+          scopuri: data.serviceType === "website" ? (data.scopuri || []) : [],
+          stil: data.serviceType === "website" ? (data.stilWebsite || null) : null,
+          buget: data.serviceType === "website" ? (data.buget || null) : null,
+          // Motion
+          scop_video: data.serviceType === "motion" ? (data.scopVideo || []) : [],
+          altceva_scop: data.serviceType === "motion" ? (data.altcevaScop || null) : null,
+          footage_existent: data.serviceType === "motion" ? (data.footageExistent || null) : null,
+          footage_link: data.serviceType === "motion" ? (data.footageLink || null) : null,
+          vibe: data.serviceType === "motion" ? (data.vibe || null) : null,
+          culori_brand: data.serviceType === "motion" && data.areCulori === "da" ? (data.culoriText || null) : null,
+        }),
+      });
+      if (!webhookRes.ok) console.error("Make webhook non-OK:", webhookRes.status);
+    } catch (e) {
+      console.error("Make webhook failed:", e);
+    }
+  } else {
+    console.warn("MAKE_WEBHOOK_URL not configured — lead saved but no email will be sent");
+  }
+
   return NextResponse.json({ ok: true });
 }

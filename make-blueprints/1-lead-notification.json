@@ -1,0 +1,134 @@
+{
+    "name": "Clevs Studio — Lead nou",
+    "flow": [
+        {
+            "id": 1,
+            "module": "gateway:CustomWebHook",
+            "version": 1,
+            "parameters": {
+                "hook": null,
+                "maxResults": 1
+            },
+            "mapper": {},
+            "metadata": {
+                "designer": {
+                    "x": 0,
+                    "y": 0
+                },
+                "restore": {
+                    "parameters": {
+                        "hook": {
+                            "data": {
+                                "editable": "true"
+                            },
+                            "label": "Clevs Studio Lead Webhook"
+                        }
+                    }
+                },
+                "parameters": [
+                    {
+                        "name": "hook",
+                        "type": "hook:gateway-webhook",
+                        "label": "Webhook",
+                        "required": true
+                    },
+                    {
+                        "name": "maxResults",
+                        "type": "number",
+                        "label": "Maximum number of results"
+                    }
+                ],
+                "interface": [
+                    { "name": "service_type", "type": "text" },
+                    { "name": "domeniu", "type": "text" },
+                    { "name": "nume_afacere", "type": "text" },
+                    { "name": "nume", "type": "text" },
+                    { "name": "email", "type": "text" },
+                    { "name": "whatsapp", "type": "text" },
+                    { "name": "are_website", "type": "boolean" },
+                    { "name": "website_link", "type": "text" },
+                    { "name": "scopuri", "type": "array", "spec": { "type": "text" } },
+                    { "name": "stil", "type": "text" },
+                    { "name": "buget", "type": "text" },
+                    { "name": "scop_video", "type": "array", "spec": { "type": "text" } },
+                    { "name": "altceva_scop", "type": "text" },
+                    { "name": "footage_existent", "type": "text" },
+                    { "name": "footage_link", "type": "text" },
+                    { "name": "vibe", "type": "text" },
+                    { "name": "culori_brand", "type": "text" }
+                ]
+            }
+        },
+        {
+            "id": 2,
+            "module": "google-email:ActionSendEmail",
+            "version": 2,
+            "parameters": {
+                "account": null
+            },
+            "mapper": {
+                "to": [
+                    "clevs.contact@gmail.com"
+                ],
+                "subject": "🔥 LEAD NOU Clevs Studio — {{1.service_type}} — {{1.nume_afacere}}",
+                "html": "<h2>Lead nou — Clevs Studio</h2><p><strong>Serviciu:</strong> {{1.service_type}}</p><p><strong>Domeniu:</strong> {{1.domeniu}}</p><p><strong>Business:</strong> {{1.nume_afacere}}</p><p><strong>Prenume:</strong> {{1.nume}}</p><p><strong>Email:</strong> {{1.email}}</p><p><strong>WhatsApp:</strong> {{1.whatsapp}}</p><hr><h3>Detalii website</h3><p><strong>Are website:</strong> {{1.are_website}}</p><p><strong>Link:</strong> {{1.website_link}}</p><p><strong>Scop:</strong> {{1.scopuri}}</p><p><strong>Stil:</strong> {{1.stil}}</p><p><strong>Buget:</strong> {{1.buget}}</p><hr><h3>Detalii motion</h3><p><strong>Scop video:</strong> {{1.scop_video}}</p><p><strong>Altceva:</strong> {{1.altceva_scop}}</p><p><strong>Footage:</strong> {{1.footage_existent}}</p><p><strong>Link footage:</strong> {{1.footage_link}}</p><p><strong>Vibe:</strong> {{1.vibe}}</p><p><strong>Culori brand:</strong> {{1.culori_brand}}</p>",
+                "attachments": [],
+                "cc": [],
+                "bcc": [],
+                "inReplyTo": "",
+                "noReply": false
+            },
+            "metadata": {
+                "designer": {
+                    "x": 300,
+                    "y": 0
+                },
+                "restore": {
+                    "parameters": {
+                        "account": {
+                            "label": "My Gmail account"
+                        }
+                    }
+                },
+                "parameters": [
+                    {
+                        "name": "account",
+                        "type": "account:google",
+                        "label": "Connection",
+                        "required": true
+                    }
+                ],
+                "expect": [
+                    {
+                        "name": "to",
+                        "type": "array",
+                        "label": "Recipient email address(es)",
+                        "validate": { "maxItems": 100 },
+                        "spec": { "type": "email", "label": "Email", "required": true }
+                    },
+                    { "name": "subject", "type": "text", "label": "Subject" },
+                    { "name": "html", "type": "text", "label": "Content" }
+                ]
+            }
+        }
+    ],
+    "metadata": {
+        "instant": true,
+        "version": 1,
+        "scenario": {
+            "roundtrips": 1,
+            "maxErrors": 3,
+            "autoCommit": true,
+            "autoCommitTriggerLast": true,
+            "sequential": false,
+            "confidential": false,
+            "dataloss": false,
+            "dlq": false,
+            "freshVariables": false
+        },
+        "designer": {
+            "orphans": []
+        },
+        "zone": "eu2.make.com"
+    }
+}

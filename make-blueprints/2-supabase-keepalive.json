@@ -1,0 +1,143 @@
+{
+    "name": "Clevs — Supabase Keep Alive",
+    "flow": [
+        {
+            "id": 1,
+            "module": "http:ActionSendData",
+            "version": 3,
+            "parameters": {
+                "handleErrors": false,
+                "useNewZLibDeCompress": true
+            },
+            "mapper": {
+                "ca": "",
+                "qs": [],
+                "url": "https://unqkmrewvmlqcptbuset.supabase.co/rest/v1/audit_leads?select=id&limit=1",
+                "data": "",
+                "gzip": true,
+                "method": "get",
+                "headers": [
+                    {
+                        "name": "apikey",
+                        "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InVucWttcmV3dm1scWNwdGJ1c2V0Iiwicm9sZSI6InNlcnZpY2Vfcm9sZSIsImlhdCI6MTc3ODM2MTY5OSwiZXhwIjoyMDkzOTM3Njk5fQ.xfWvuv8p0U_YOMQfyKes6F8D9_Drf3xbfwOgLZwRS5Q"
+                    },
+                    {
+                        "name": "Authorization",
+                        "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InVucWttcmV3dm1scWNwdGJ1c2V0Iiwicm9sZSI6InNlcnZpY2Vfcm9sZSIsImlhdCI6MTc3ODM2MTY5OSwiZXhwIjoyMDkzOTM3Njk5fQ.xfWvuv8p0U_YOMQfyKes6F8D9_Drf3xbfwOgLZwRS5Q"
+                    }
+                ],
+                "timeout": "",
+                "useMtls": false,
+                "authPass": "",
+                "authUser": "",
+                "bodyType": "",
+                "contentType": "",
+                "serializeUrl": false,
+                "shareCookies": false,
+                "parseResponse": false,
+                "followRedirect": true,
+                "useQuerystring": false,
+                "followAllRedirects": false,
+                "rejectUnauthorized": true
+            },
+            "metadata": {
+                "designer": {
+                    "x": 0,
+                    "y": 0
+                },
+                "restore": {},
+                "parameters": [
+                    {
+                        "name": "handleErrors",
+                        "type": "boolean",
+                        "label": "Evaluate all states as errors (except for 2xx and 3xx )"
+                    },
+                    {
+                        "name": "useNewZLibDeCompress",
+                        "type": "boolean",
+                        "label": "Use new zlib decompression"
+                    }
+                ]
+            }
+        },
+        {
+            "id": 2,
+            "module": "http:ActionSendData",
+            "version": 3,
+            "parameters": {
+                "handleErrors": false,
+                "useNewZLibDeCompress": true
+            },
+            "mapper": {
+                "ca": "",
+                "qs": [],
+                "url": "https://unqkmrewvmlqcptbuset.supabase.co/rest/v1/studio_leads?select=id&limit=1",
+                "data": "",
+                "gzip": true,
+                "method": "get",
+                "headers": [
+                    {
+                        "name": "apikey",
+                        "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InVucWttcmV3dm1scWNwdGJ1c2V0Iiwicm9sZSI6InNlcnZpY2Vfcm9sZSIsImlhdCI6MTc3ODM2MTY5OSwiZXhwIjoyMDkzOTM3Njk5fQ.xfWvuv8p0U_YOMQfyKes6F8D9_Drf3xbfwOgLZwRS5Q"
+                    },
+                    {
+                        "name": "Authorization",
+                        "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InVucWttcmV3dm1scWNwdGJ1c2V0Iiwicm9sZSI6InNlcnZpY2Vfcm9sZSIsImlhdCI6MTc3ODM2MTY5OSwiZXhwIjoyMDkzOTM3Njk5fQ.xfWvuv8p0U_YOMQfyKes6F8D9_Drf3xbfwOgLZwRS5Q"
+                    }
+                ],
+                "timeout": "",
+                "useMtls": false,
+                "authPass": "",
+                "authUser": "",
+                "bodyType": "",
+                "contentType": "",
+                "serializeUrl": false,
+                "shareCookies": false,
+                "parseResponse": false,
+                "followRedirect": true,
+                "useQuerystring": false,
+                "followAllRedirects": false,
+                "rejectUnauthorized": true
+            },
+            "metadata": {
+                "designer": {
+                    "x": 300,
+                    "y": 0
+                },
+                "restore": {},
+                "parameters": [
+                    {
+                        "name": "handleErrors",
+                        "type": "boolean",
+                        "label": "Evaluate all states as errors (except for 2xx and 3xx )"
+                    },
+                    {
+                        "name": "useNewZLibDeCompress",
+                        "type": "boolean",
+                        "label": "Use new zlib decompression"
+                    }
+                ]
+            }
+        }
+    ],
+    "metadata": {
+        "instant": false,
+        "version": 1,
+        "scenario": {
+            "roundtrips": 1,
+            "maxErrors": 3,
+            "autoCommit": true,
+            "autoCommitTriggerLast": true,
+            "sequential": false,
+            "confidential": false,
+            "dataloss": false,
+            "dlq": false,
+            "freshVariables": false
+        },
+        "designer": {
+            "orphans": []
+        },
+        "zone": "eu2.make.com",
+        "notes": "Set scheduling: Every 5 days. Touches audit_leads and studio_leads tables to keep Supabase project active on free tier."
+    }
+}
